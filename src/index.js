@@ -52,10 +52,12 @@ class QuizBee extends Component {
           this.state.responses < 5 &&
           this.state.questionBank.map(
             ({ question, answers, correct, questionId }) => (
+              // list out the individual answers
               <QuestionBox
                 question={question}
                 options={answers}
                 selected={answer => this.computeAnswer(answer, correct)}
+                // what we get from the api
                 key={questionId}
               />
             )
