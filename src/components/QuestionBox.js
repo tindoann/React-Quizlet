@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 
 const QuestionBox = ({question, options, selected}) => {
   const [answer, setAnswer] = useState(options);
