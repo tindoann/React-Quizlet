@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+// component for the questions section 
 
 const QuestionBox = ({question, options, selected}) => {
+  // selected is a function from questionbox
   const [answer, setAnswer] = useState(options);
   return (
     <div className="questionBox">
