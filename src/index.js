@@ -13,6 +13,7 @@ class QuizBee extends Component {
     responses: 0
   };
 
+  // get the response from questions api 
   getQuestions = () => {
     quizService().then(questions => {
       this.setState({
@@ -20,6 +21,9 @@ class QuizBee extends Component {
       });
     });
   };
+
+  // computeAnswer from the user selected
+  // selected= {answer => this.computeAnswer(answer, correct)}
 
   computeAnswer = (answer, correctAnswer) => {
     if (answer === correctAnswer) {
@@ -34,12 +38,14 @@ class QuizBee extends Component {
 
   playAgain = () => {
     this.getQuestions();
+    // reset quiz
     this.setState({
       score: 0,
       responses: 0
     });
   };
 
+  // when brower initially render s
   componentDidMount() {
     this.getQuestions();
   }
